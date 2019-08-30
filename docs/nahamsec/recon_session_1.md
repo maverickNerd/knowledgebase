@@ -179,8 +179,21 @@ internal
 \# python webscreenshot.py \<input\_dir\> -o \<out\_dir\> -w 20 -m -a  "X-FORWARDED-FOR:127.0.0.1"
 
 
+```bash
+for I in $(ls); do  
+    echo "$I" >>index.html  
+    echo "<img src=$I><br>" >> index.html;  
+done  
+```
 
+```
+for I in $(cat alive.txt); do  
+    python3 dirsearch ... -u https://$I  
+done  
+```
 
+### Learning:
 
+##### Learn the process of recon, every one has or can use their own tool, don't adopt tools, think about the process that you can take during your recon.
 
 
