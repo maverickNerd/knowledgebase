@@ -244,6 +244,19 @@ internal  </p>
 <h3 id="take-screenshots-now">Take Screenshots now</h3>
 <h4 id="install-phantomjs">Install phantomJS</h4>
 <p># python webscreenshot.py \&lt;input_dir> -o \&lt;out_dir> -w 20 -m -a  "X-FORWARDED-FOR:127.0.0.1"</p>
+<pre><code class="bash">for I in $(ls); do  
+    echo &quot;$I&quot; &gt;&gt;index.html  
+    echo &quot;&lt;img src=$I&gt;&lt;br&gt;&quot; &gt;&gt; index.html;  
+done  
+</code></pre>
+
+<pre><code>for I in $(cat alive.txt); do  
+    python3 dirsearch ... -u https://$I  
+done  
+</code></pre>
+
+<h3 id="learning">Learning:</h3>
+<h5 id="learn-the-process-of-recon-every-one-has-or-can-use-their-own-tool-dont-adopt-tools-think-about-the-process-that-you-can-take-during-your-recon">Learn the process of recon, every one has or can use their own tool, don't adopt tools, think about the process that you can take during your recon.</h5>
               
             </div>
           </div>
