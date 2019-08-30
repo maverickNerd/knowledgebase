@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Setting up Kali Linux - knowledge base</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Setting up Kali Linux";
+    var mkdocs_page_input_path = "Virtual_Lab_Setup.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> knowledge base</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Setting up Kali Linux</a>
+    <ul class="subnav">
+            
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">knowledge base</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Setting up Kali Linux</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>For running tools required for pentesting, you need to setup your own linux.</p>
+<p>There are many linux flavour available in market, like Ubuntu, RedHat, OpenSuse but Kali is one of the best for people in infosec as it
+contains all the tools preinstalled which are required by any pentester.</p>
+<p>It is always better to install Kali as a guest OS/virtual OS, on top of existing OS like windows, reason is, since kali OS is going to be the source of all attacks what you
+are going to do against other target(other PCs/Websites), even if your own system got hacked by unethical people it will only effect the vmware OS only, not the original OS on top of which you are running your kali.</p>
+<p>So, before installing Kali OS, you need to install hypervisor software, there are 2 well supported hypervisor available in market, VMWare and VirtualBox.</p>
+<p>I personally like working with Vmware, so download and install Vmware from this link - https://www.vmware.com/products/workstation-player.html</p>
+<p>Once Vmware got installed, download zip file of kali linux from this link - https://www.offensive-security.com/kali-linux-vm-vmware-virtualbox-image-download/</p>
+<p>or if you applied for OSCP, you will get a download link of kali from OSCP in a mail. Only difference between these 2 kali version is that the OSCP kali linux contains some extra preinstalled tools which might be needed during OSCP.</p>
+<p>Unzip above file using 7z software, you can download 7z from here, if you don't have it already: https://www.7-zip.org/download.html</p>
+<p>Go to the extracted folder and open file having type as Vmware virtual machine configuration(Kali-Linux-2019.1-vm-amd64). Once it get opened it will show prompt like below:</p>
+<p>Click on "I Copied It".</p>
+<p>Once it boots, type Username: root and Passwords: toor</p>
+<p>There might be chances that you need to change the network adapter settings.</p>
+<p>VMware offers 3 options for virtual network connections: bridged, NAT, and host only. You should choose the bridged option, but below is the info on each:
+- Bridged network: It connects the virtual machine directly to the local network using the same connection as the host system. As far as the local network is concerned, our virtual machine is just another node
+on the network with its own IP address.
+- NAT(Network Address Translation): It sets up a private network on the host machine. The private network translates outgoing traffic from the virtual machine to the local network. On the local network, traffic from
+the virtual machine will appear to come from the host machine’s IP
+address.
+- Host-only network: It limits the virtual machine to a local private network on the host. The virtual machine will be able to communicate with other virtual machines in the host-only network as well as the host machine itself, but it will not be able to send or receive any traffic with the local network or the Internet.</p>
+<p>Chose Bridge Network Connection:
+'''
+Go to player-&gt; Machine -&gt; Virtual Machine Settings -&gt; Bridged option.
+'''</p>
+<p>To learn Linux : https://linuxjourney.com/
+https://ryanstutorials.net/linuxtutorial/</p>
+<p>if you want to learn kali linux:</p>
+<p>you can skip wireless part from this video:
+https://www.youtube.com/watch?v=0uvWRwLs5Zo
+kali linux book: https://kali.training/downloads/Kali-Linux-Revealed-1st-edition.pdf</p>
+<p>If you want to understand any command, you can put the command in below website to get help about it:
+https://www.explainshell.com/</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
