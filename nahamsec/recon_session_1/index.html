@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>NahamSec Recon Session 1 Notes - Knowledge Base</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "NahamSec Recon Session 1 Notes";
+    var mkdocs_page_input_path = "nahamsec/recon_session_1.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Knowledge Base</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../Virtual_Lab_Setup/">Setting up Kali Linux</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">NahamSec Recon Session 1 Notes</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#recon-session-1-on-yahoo">Recon Session 1 on Yahoo</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#check-for-in-scope-and-out-of-scope-items-on-hackeronecom">Check for In-Scope and Out-of -Scope items on Hackerone.com</a></li>
+        
+            <li><a class="toctree-l3" href="#google-dorks">Google Dorks</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Knowledge Base</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>NahamSec Recon Session 1 Notes</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="recon-session-1-on-yahoo">Recon Session 1 on Yahoo</h1>
+<h3 id="check-for-in-scope-and-out-of-scope-items-on-hackeronecom">Check for In-Scope and Out-of -Scope items on Hackerone.com</h3>
+<h4 id="search-on-crtsh-yahoocom">Search on <em>crt.sh</em>    ---&gt; %.yahoo.com</h4>
+<p>--&gt; you can put % wildcard anywhere in search like %api.yahoo.com<br />
+  --&gt; %internal%.yahoo.com  </p>
+<h4 id="search-on-certspotter-yahoocom">Search on <em>certspotter</em>   ---&gt; yahoo.com</h4>
+<ul>
+<li>Check the github code in <em>recon_profile</em> repo of nahamsec for cerspotter bash 1 line command, you can set it in your .bash_profile and then run it just by  calling function name    </li>
+</ul>
+<p># certspotter yahoo.com                --&gt; output of this will not give all the subdomains of yahoo  </p>
+<h4 id="check-for-first-level-subdomain-example">Check for first level subdomain example:</h4>
+<p>ops.yahoo.com  --&gt; juicy + potentiall internal
+ne1.yahoo.com  --&gt; corporate/internal domain
+xobni.yahoo.com --&gt; next potential internal</p>
+<p><strong>Do These First</strong></p>
+<p>corp.yahoo.com<br />
+bf1.yahoo.com<br />
+urs.yahoo.com<br />
+adx.yahoo.com  </p>
+<p><strong>Do later</strong></p>
+<p>gq1.yahoo.com<br />
+ir2/yahoo.com<br />
+sg3.yahoo.com<br />
+tp2.yahoo.com<br />
+udb.yahoo.com  --&gt; api enpoints<br />
+payment.yahoo.com ---&gt; associated with internalapi
+* these are all interesting as these belong to corporate domains.  </p>
+<h4 id="check-for-how-many-subdomains-are-aliveonline">Check for how many subdomains are alive/online ?</h4>
+<p><code>certspotter corp.yahoo.com | httprobe</code>  </p>
+<ul>
+<li>httprobe os from tomnonnon github</li>
+</ul>
+<h4 id="make-directory-for-target-and-all-subdomains-and-all-alive-domains">Make directory for target and all subdomains and all alive domains:</h4>
+<p># mkdir yahoo.com<br />
+# cd yahoo.com<br />
+# touch all.txt<br />
+# touch alive.txt  </p>
+<ul>
+<li>We are picking up api endpoints because these give really cool interesting stuff, internals and corporate because it is internal to yahoo and we want to know if we have access to it from outside.</li>
+</ul>
+<p># certspotter yahoo.com | grep dev | httprobe  </p>
+<p># certspotter assistant.yahoo.com | grep dev | httprobe  </p>
+<p>open a page from here on browser to check the response   </p>
+<p>Note: Error 404 does not mean that we don't have anything there  </p>
+<h5 id="you-can-have-a-simple-for-loop-to-run-other-commands">You can have a simple for loop to run other commands</h5>
+<p>example:<br />
+for i in <code>certspotter assistant.yahoo.com  
+| httprobe</code>; do curl $i/phpinfo.php; done</p>
+<ul>
+<li>Template  </li>
+</ul>
+<p>for i in <code>certspotter assistant.yahoo.com
+| httprobe</code>; do <command> ; done</p>
+<p># crtsh ops.yahoo.com &gt;&gt; all.txt  </p>
+<p># crtsh corp.yahoo.com &gt;&gt; all.txt</p>
+<ul>
+<li>
+<p>Process is to able to find interesting things and how infrastructure of a website is built.</p>
+</li>
+<li>
+<p>Check for xobni in cr.sh like %xobni%.yahoo.com</p>
+</li>
+</ul>
+<p># crtsh xobni.yahoo.com &gt;&gt; all.txt</p>
+<p># nano ~/.bash_profile</p>
+<pre><code>getcount(){  
+cat all.txt | wc -l  
+}  
+</code></pre>
+
+<p># source ~/.bash_profile</p>
+<p># cat all.txt | httprobe</p>
+<ul>
+<li>Put some more wildcard in crt.sh website   ----&gt; %25.%25.%25.%25.%25.yahoo.com</li>
+</ul>
+<p>Got some interesting subdomains:  <br />
+splunk.yahoo.com<br />
+test-paranoids.yahoo.com<br />
+manhattan.tp2.yahoo.com  </p>
+<p># crtsh test-paranoids.yahoo.com | httprobe          ----&gt; gave no result, so offline for us and of no use  </p>
+<p># crtsh bf1.yahoo.com | wc -l   --&gt; 509  </p>
+<p># crtsh bf1.yahoo.com </p>
+<h4 id="check-on-crtsh-website-for-bf1yahoocom">Check on crt.sh website for %.bf1.yahoo.com</h4>
+<pre><code> corp.bf1.yahoo.com   
+ mail.bf1.yahoo.com  
+ infra.bf1.yahoo.com  
+ vip.bf1.yahoo.com  
+ openstack.bf1.yahoo.com  
+ cs.bf1.yahoo.com  
+ flurry.bf1.yahoo.com  
+ prod.bf1.yahoo.com
+ azurite.bf1.yahoo.com  
+ omega.bf1.yahoo.com
+</code></pre>
+<p><strong>ideas</strong></p>
+<p>%uat%<br />
+run a curl on <em>adx.bf1.yahoo.com/pguix</em></p>
+<h2 id="google-dorks">Google Dorks</h2>
+<p>site:bf1.yahoo.com -flickr -omega -adx<br />
+"bf1.yahoo.com" github.com  </p>
+<p># vi bf1          --&gt; dump all bf1 subdomains here  </p>
+<pre><code>for i in `cmd`; do  
+   crtsh $i  
+; done  
+</code></pre>
+
+<ul>
+<li>Run crtsh on all the above bf1 domain</li>
+</ul>
+<p>Get some more interesting domains.</p>
+<p>iextract.bf1.yahoo.com  <br />
+ diy.bf1.yahoo.com <br />
+ manhatan.bf1.yahoo.com<br />
+ netops.ne1.yahoo.com<br />
+ hk.%.yahoo.com<br />
+ advertising.yahoo.com<br />
+ creative.yahoo.com  </p>
+<h5 id="check-for-some-interesting-subdomains-containing-these-keywords">Check for Some interesting subdomains containing these keywords</h5>
+<p>admin  <br />
+jenkins<br />
+stage<br />
+test<br />
+dev<br />
+devops<br />
+staff<br />
+db<br />
+qa<br />
+internal  </p>
+<h6 id="now-find-all-the-alive-domains">Now find all the alive domains</h6>
+<p># cat all.txt | httprobe &gt;&gt; alive.txt  </p>
+<h6 id="check-http-probe-on-all-ports-except-port-80-and-443">Check http probe on all ports except port 80 and 443</h6>
+<p># cat all.txt | httprove -s -p https:8443  </p>
+<h3 id="take-screenshots-now">Take Screenshots now</h3>
+<h4 id="install-phantomjs">Install phantomJS</h4>
+<p># python webscreenshot.py \&lt;input_dir> -o \&lt;out_dir> -w 20 -m -a  "X-FORWARDED-FOR:127.0.0.1"</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../../Virtual_Lab_Setup/" class="btn btn-neutral" title="Setting up Kali Linux"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../Virtual_Lab_Setup/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>
