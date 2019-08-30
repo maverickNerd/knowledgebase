@@ -1,0 +1,6 @@
+site_name: knowledge base
+
+nav:
+    - Home: index.md
+    - Setting up Kali Linux: Virtual_Lab_Setup.md
+theme: readthedocs
