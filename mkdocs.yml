@@ -4,4 +4,7 @@ nav:
     - Home: index.md
     - Setting up Kali Linux: Virtual_Lab_Setup.md
     - NahamSec Recon Session 1 Notes: nahamsec/recon_session_1.md
+    - NahamSec Recon Session 2 Notes: nahamsec/recon_session_2.md
+    - BugBountyNotes Mentoring Session: bugbountynotes/firstlivementoring.md
+    - BugBountyNotes FastFoodHacking Session 1: bugbountynotes/fastfoodhackingsession1.md
 theme: readthedocs
