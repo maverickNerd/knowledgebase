@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>BugBountyNotes Mentoring Session - Knowledge Base</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "BugBountyNotes Mentoring Session";
+    var mkdocs_page_input_path = "bugbountynotes/firstlivementoring.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Knowledge Base</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../Virtual_Lab_Setup/">Setting up Kali Linux</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../nahamsec/recon_session_1/">NahamSec Recon Session 1 Notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../nahamsec/recon_session_2/">NahamSec Recon Session 2 Notes</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">BugBountyNotes Mentoring Session</a>
+    <ul class="subnav">
+            
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../fastfoodhackingsession1/">BugBountyNotes FastFoodHacking Session 1</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Knowledge Base</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>BugBountyNotes Mentoring Session</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>-- Picking a target. It is tough to choose, but choose wisely.</p>
+<ul>
+<li>Poke a little bit on a target, find some low hanging fruit, understand the basic diffense the target is having.  </li>
+<li>Get the feel for things on target.  </li>
+<li>Do recon on the target, got subdomains now what??  </li>
+</ul>
+<p>-- it all depends now on the process that you want to follow or like:<br />
+       * You might only go for interesting names of subdomains and try to get some files.<br />
+       * You can find signup/registration adn login prompt subdomains and poke on these
+       * Don't follow the complete process of others(hackers), make your own, take bit and pieces.</p>
+<p><strong>Understand the target</strong></p>
+<ul>
+<li>
+<p>Learn how the developers are thinking, learn how the website is working. If the dev is missing something at one place, chances are that there will be some other places where they are missing the same.</p>
+</li>
+<li>
+<p>Understand what they are trying to protect, what they are trying to achieve.</p>
+</li>
+</ul>
+<p>--&gt; Never stop doing recon, websites are always bringing new code.</p>
+<p>--&gt; XSS, open URL redirect, CSRF, clickjacking are low hanging fruits. </p>
+<p>--&gt; Most apps are vulnerable to IDOR.</p>
+<ul>
+<li>
+<p>Don't spray wild payloads everywhere, understand whats going on, make POC according to that.</p>
+</li>
+<li>
+<p>Try to understand what the website is actually about.</p>
+</li>
+<li>
+<p>There are som many bug class, so try to set your focus on what you what you want to find at the endpoint or in a website.</p>
+</li>
+<li>
+<p>If you find the key, google the key/token, check if there is some talk around it.</p>
+</li>
+<li>
+<p>Come up with your won checklists when testing !<br />
+Example: If you are abel to signup, you can interact, things to test for -stored xss, open redirect, can you upload photo, token leaks. Check what can you do?</p>
+</li>
+<li>
+<p>Look on burp, see interesting parameters.</p>
+</li>
+<li>
+<p>Example:  This applies to XSS, open redirect -
+\&lt;h2>
+\&lt;h2
+\&lt;%00h2>
+\&lt;%0dh2>
+\&lt;/h2/x></p>
+</li>
+<li>
+<p>Try to understand the filter, try to understand if their filter is vulnerable.</p>
+</li>
+<li>
+<p>Put beeceptor kind of url in referer and check if site reaches to you.</p>
+</li>
+<li>
+<p>Use spider to find endpoints and JS links.</p>
+</li>
+<li>
+<p>Read, Read and read ! Disclose reports, tutorials, writeups, Test for bypasses !</p>
+</li>
+<li>
+<p>Try Changing content-type</p>
+</li>
+<li>
+<p>Find the IP to bypass cloudfare.</p>
+</li>
+<li>
+<p>Found something in X-Forwarded-For or Cookie header which is exploting XSS, you can use cache poisoning, try it, it might work.</p>
+</li>
+<li>
+<p>How do you know if endpoint is vulnerable to SSRF?<br />
+  --&gt; check for parameters,<br />
+if something is URL, or something that is looking as url ,even if the endpoint like "/endpoint", potentially making a request somewhere to something, if you put your URL there, your server ip, or you can even put open url redirect so for example there's a end point where it will take another endpoint and send a request to it internally and give you the contents and if you try to change it to external website it doesn't work and it can only be an endpoint.<br />
+Now if you found a open URL redirect what about if you force the server to visit that does it follow the redirect, which might follow it to somehting internal which might follow you the response.</p>
+</li>
+</ul>
+<p><strong>Example of Session Managament Issue</strong></p>
+<p>I had a website where I could only insert an image but link to my website, I bypassed their protection to link it to my website and on the login they were pretty secure I can go to my URL and find some endpoints<br />
+and one of the enpoint was where my image was so after logging in I get to that endpoint where my image was and then that image page link to my URL in the images and in the referer was leaked the user's token.</p>
+<ul>
+<li>
+<p>Use X-Forwarded-For with 127.0.0.1 or local IP when you do signup/login/password reset and see what happens.</p>
+</li>
+<li>
+<p>There is no time for recon to stop, you can go as long as you can.</p>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../fastfoodhackingsession1/" class="btn btn-neutral float-right" title="BugBountyNotes FastFoodHacking Session 1">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../nahamsec/recon_session_2/" class="btn btn-neutral" title="NahamSec Recon Session 2 Notes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../nahamsec/recon_session_2/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../fastfoodhackingsession1/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

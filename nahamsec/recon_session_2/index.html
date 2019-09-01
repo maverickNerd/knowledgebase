@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>NahamSec Recon Session 2 Notes - Knowledge Base</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "NahamSec Recon Session 2 Notes";
+    var mkdocs_page_input_path = "nahamsec/recon_session_2.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Knowledge Base</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../Virtual_Lab_Setup/">Setting up Kali Linux</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../recon_session_1/">NahamSec Recon Session 1 Notes</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">NahamSec Recon Session 2 Notes</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#this-weeks-topics">This Week's Topics:</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#check-meg-tool-also-from-tomnomnom">Check meg tool also from tomnomnom</a></li>
+        
+            <li><a class="toctree-l3" href="#get-jq-from-here-httpsstedolangithubiojq-jq-is-like-sed-for-json-data-you-can-use-it-to-slice-and-filter-and-map-and-transform-structured-data">Get jq from here - https://stedolan.github.io/jq/      --&gt; jq is like sed for JSON data - you can use it to slice and filter and map and transform structured data</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#censys">Censys</a></li>
+    
+
+    <li class="toctree-l2"><a href="#todo">ToDo:</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#country-based-searches">Country based Searches</a></li>
+        
+            <li><a class="toctree-l3" href="#ideas-future-domains">ideas / future domains</a></li>
+        
+            <li><a class="toctree-l3" href="#gogle-search">Gogle Search</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#aquatone-and-gowitness-for-screenshot-of-websites">Aquatone and gowitness for screenshot of websites</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#search-on-shodan-for-ipv4-addresses-of-yahoo">Search on shodan for ipv4 addresses of yahoo</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#aproach">Aproach</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../bugbountynotes/firstlivementoring/">BugBountyNotes Mentoring Session</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../bugbountynotes/fastfoodhackingsession1/">BugBountyNotes FastFoodHacking Session 1</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Knowledge Base</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>NahamSec Recon Session 2 Notes</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h4 id="this-weeks-topics">This Week's Topics:</h4>
+<ul>
+<li>crt.sh  </li>
+<li>certspotter.com  </li>
+<li>Shodan  </li>
+<li>Censys.io  </li>
+</ul>
+<p>All Subdomains and Data:<br />
+https://github.com/nahamsec/SundayStr...  </p>
+<p>Github:<br />
+https://github.com/nahamsec  </p>
+<p>Tools:<br />
+JSParser: https://github.com/nahamsec/JSParser<br />
+LazyRecon: https://github.com/nahamsec/LazyRecon<br />
+Bash Aliases: https://github.com/nahamsec/recon_pro...<br />
+Webscreenshot: https://github.com/maaaaz/webscreenshot<br />
+httprobe: https://github.com/tomnomnom/httprobe<br />
+aquatone: https://github.com/michenriksen/aquatone </p>
+<p>---&gt; anew from tomnomnom, append lines from stdin to a file, but only if they don't already appear in the file</p>
+<p># cat things.txt
+# cat newthings.txt</p>
+<p># cat newthings.txt | anew things.txt</p>
+<h5 id="check-meg-tool-also-from-tomnomnom">Check meg tool also from tomnomnom</h5>
+<h5 id="get-jq-from-here-httpsstedolangithubiojq-jq-is-like-sed-for-json-data-you-can-use-it-to-slice-and-filter-and-map-and-transform-structured-data">Get jq from here - https://stedolan.github.io/jq/      --&gt; jq is like sed for JSON data - you can use it to slice and filter and map and transform structured data</h5>
+<p><code>``
+for i in</code>cat target.txt`<br />
+do<br />
+    curl -s 'https://crt.sh/\?q\=\%25.$i\&amp;output\=json' | jq -r '.[].name_value' | sed 's/*.//g' | sort -u |tee -a all.txt
+done  </p>
+<h4 id="censys">Censys</h4>
+<p>Search for 443.https.tls.chain.parsed.names:yahoo.com</p>
+<h3 id="todo">ToDo:</h3>
+<p>ysm.yahoo.com<br />
+bfv.yahoo.com<br />
+cp.yahoo.com<br />
+adspecs.yahoo.com<br />
+yahoo-inc.com<br />
+admanageplus.com<br />
+tw.yahoo.com<br />
+vpg.yahoo.com<br />
+uad2.yahoo.com<br />
+ah.yahoo.com<br />
+abuse.yahoo.com<br />
+sk1.yahoo.com<br />
+sync.yahoo.com<br />
+hk.%25.yahoo.com<br />
+sports.yahoo.com<br />
+sg3.yahoo.com<br />
+sg3.yahoo.com<br />
+yql.yahoo.com  </p>
+<p>esports.yahoo.com<br />
+api.fantasysports.yahoo.com<br />
+mobile.yahoo.com<br />
+data.yahoo.com<br />
+sandbox.yahoo.com<br />
+%answers%.yahoo.com  </p>
+<p>geo.yahoo.com<br />
+groups.yahoo.com<br />
+gemini.yahoo.com
+admanager.yahoo.com  </p>
+<h4 id="country-based-searches">Country based Searches</h4>
+<p>%25.ect.yahoo.com<br />
+%25.eds.yahoo.com<br />
+%25.tw1.yahoo.com<br />
+%25.bid.yahoo.com<br />
+hk.%25.biling.yahoo.com<br />
+hk.%25admin.yahoo.com<br />
+hk.%25.deals.yahoo.com<br />
+hk.%25.token.yahoo.com<br />
+\%25.hk.\%25.yahoo.com<br />
+hk.%25api.token.yahoo.com<br />
+hk.%25.auctions.yahoo.com<br />
+yw.%25.yahoo.com<br />
+tw.%25.mall.yahoo.com<br />
+hk.%25.store.auctions.yahoo.com<br />
+tw.back  </p>
+<h4 id="ideas-future-domains">ideas / future domains</h4>
+<p>diy.bf1.yahoo.com<br />
+yahooapis.com<br />
+verizonmedia/oauth.com ?????  </p>
+<p>txmblr.com<br />
+t.umblr.com<br />
+srvcs.tumblr.com<br />
+makers.com<br />
+builtbygirls.com  </p>
+<p>--&gt; Check in Certificated of Censys for yahoo.com</p>
+<h4 id="gogle-search">Gogle Search</h4>
+<p>site:yahoo.com ext:php -hk -tw -maktoob  </p>
+<h3 id="aquatone-and-gowitness-for-screenshot-of-websites">Aquatone and gowitness for screenshot of websites</h3>
+<p># cat alive.txt | aquatone -chromepath \&lt;chromium_path> -out \&lt;out_dir> -threads 50</p>
+<h4 id="search-on-shodan-for-ipv4-addresses-of-yahoo">Search on shodan for ipv4 addresses of yahoo</h4>
+<h3 id="aproach">Aproach</h3>
+<p>Find Subdomains -&gt; port scan -&gt; screenshot -&gt; ditbrute force -&gt; Hack all the things</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../bugbountynotes/firstlivementoring/" class="btn btn-neutral float-right" title="BugBountyNotes Mentoring Session">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../recon_session_1/" class="btn btn-neutral" title="NahamSec Recon Session 1 Notes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../recon_session_1/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../bugbountynotes/firstlivementoring/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>BugBountyNotes FastFoodHacking Session 1 - Knowledge Base</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "BugBountyNotes FastFoodHacking Session 1";
+    var mkdocs_page_input_path = "bugbountynotes/fastfoodhackingsession1.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Knowledge Base</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../Virtual_Lab_Setup/">Setting up Kali Linux</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../nahamsec/recon_session_1/">NahamSec Recon Session 1 Notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../nahamsec/recon_session_2/">NahamSec Recon Session 2 Notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../firstlivementoring/">BugBountyNotes Mentoring Session</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">BugBountyNotes FastFoodHacking Session 1</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#check-for-page-source">Check for page source</a></li>
+    
+
+    <li class="toctree-l2"><a href="#check-robotstxt-page">Check robots.txt page</a></li>
+    
+
+    <li class="toctree-l2"><a href="#got-a-login-page">Got a login Page ??</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#check-pagesource-in-settings-page">Check pagesource in settings page</a></li>
+        
+            <li><a class="toctree-l3" href="#when-you-login-usually-after-successfull-login-website-redirected-you-to-some-page-like-home-page-check-if-you-can-change-this-redirect">When you login, usually after successfull login website redirected you to some page like home page, check if you can change this redirect.</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#add-to-the-query-statement-of-loginphp-page-like-r95url1urlhttps">Add to the query statement of login.php page, like ?r_url=1&amp;url=https://</a></li>
+    
+
+    <li class="toctree-l2"><a href="#check-in-github-for-the-website-for-any-keys">Check in github for the website for any keys</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#just-try-things-if-something-you-see-in-page-source-thing-about-it-question-yourself-and-try-it">Just Try Things, if something you see in page source, thing about it, question yourself and try it.</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Knowledge Base</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>BugBountyNotes FastFoodHacking Session 1</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h4 id="check-for-page-source">Check for page source</h4>
+<ul>
+<li>Check for any variable in script which is blacnk, most probably they are filled with URL parameters, so try those in query parameters.  </li>
+<li>if some parameter is like "trackingid", and if it doesn't work, try other permutations of it like id, tid, tracking_id  </li>
+<li>Use different user-agents like of iphone/android and see if there is any other parameter appear in the source code, use that in query parameter to check for XSS or injection.  </li>
+</ul>
+<h4 id="check-robotstxt-page">Check robots.txt page</h4>
+<h3 id="got-a-login-page">Got a login Page ??</h3>
+<ul>
+<li>Try admin,admin or other default passwords.  </li>
+<li>if it works and you are logged in, try to access other pages like mentioned in robots.txt  </li>
+</ul>
+<p>Try html tags in signup form:<br />
+like : \&lt;h2>test  </p>
+<p>If they filter tags(&lt;&gt;), then try \&lt;h2</p>
+<h4 id="check-pagesource-in-settings-page">Check pagesource in settings page</h4>
+<p>if they are hiding some button using comment, uncomment, and capture the request by sending the request.</p>
+<ul>
+<li>Try removing tokens, anc check if they are vaidating tokens on server side.</li>
+</ul>
+<h4 id="when-you-login-usually-after-successfull-login-website-redirected-you-to-some-page-like-home-page-check-if-you-can-change-this-redirect">When you login, usually after successfull login website redirected you to some page like home page, check if you can change this redirect.</h4>
+<ul>
+<li>Check for page source for any JS, see if there is any redirect url code in it.</li>
+</ul>
+<p>Try to capture login request and add redirect_url parameter.</p>
+<h3 id="add-to-the-query-statement-of-loginphp-page-like-r95url1urlhttps">Add to the query statement of login.php page, like ?r_url=1&amp;url=https://</h3>
+<h3 id="check-in-github-for-the-website-for-any-keys">Check in github for the website for any keys</h3>
+<h4 id="just-try-things-if-something-you-see-in-page-source-thing-about-it-question-yourself-and-try-it">Just Try Things, if something you see in page source, thing about it, question yourself and try it.</h4>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../firstlivementoring/" class="btn btn-neutral" title="BugBountyNotes Mentoring Session"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../firstlivementoring/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>
