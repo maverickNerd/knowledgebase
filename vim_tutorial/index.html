@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Tomnomnom Vim Tutorial - Knowledge Base</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Tomnomnom Vim Tutorial";
+    var mkdocs_page_input_path = "vim_tutorial.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Knowledge Base</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Virtual_Lab_Setup/">Setting up Kali Linux</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../nahamsec/recon_session_1/">NahamSec Recon Session 1 Notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../nahamsec/recon_session_2/">NahamSec Recon Session 2 Notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../bugbountynotes/firstlivementoring/">BugBountyNotes Mentoring Session</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../bugbountynotes/fastfoodhackingsession1/">BugBountyNotes FastFoodHacking Session 1</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../bugbountynotes/challengesession1/">BugBountyNotes Challenge Session 1</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../bugbountynotes/filterbypass/">BugBountyNotes Filter Bypass Session</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../tomnomnom/session1/">Tomnomnom Q&A Session</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ippsec/tmux/">ippsec tmux Session</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../idor/">Stok IDOR Session</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Tomnomnom Vim Tutorial</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#using-assetfinder-to-get-subdomains">USing Assetfinder to get subdomains</a></li>
+    
+
+    <li class="toctree-l2"><a href="#know-which-are-running-webservers-it-checks-which-are-having-http-and-https-server-listening">Know which are running webservers, it checks which are having http and https server listening</a></li>
+    
+
+    <li class="toctree-l2"><a href="#using-meg">Using meg</a></li>
+    
+
+    <li class="toctree-l2"><a href="#running-commands-in-the-vim">Running commands in the vim</a></li>
+    
+
+    <li class="toctree-l2"><a href="#awk-text-processing-command">awk - text processing command</a></li>
+    
+
+    <li class="toctree-l2"><a href="#search-and-replace">Search and replace</a></li>
+    
+
+    <li class="toctree-l2"><a href="#xargs">xargs</a></li>
+    
+
+    <li class="toctree-l2"><a href="#html-tool-from-tomnomnom">html-tool from tomnomnom</a></li>
+    
+
+    <li class="toctree-l2"><a href="#gf">gf</a></li>
+    
+
+    <li class="toctree-l2"><a href="#unfurl-from-tomnomnom-its-a-great-tool-to-make-wordlist-using-keys-and-values-for-fuzzing">unfurl from tomnomnom                     (its a great tool to make wordlist using keys and values for fuzzing)</a></li>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Knowledge Base</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Tomnomnom Vim Tutorial</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h4 id="using-assetfinder-to-get-subdomains">USing Assetfinder to get subdomains</h4>
+<p># assetfinder --subs-only uber.com &gt; domains</p>
+<h4 id="know-which-are-running-webservers-it-checks-which-are-having-http-and-https-server-listening">Know which are running webservers, it checks which are having http and https server listening</h4>
+<p># cat domains | httpprobe | tee hosts                      /* Use "tee -a" to append */</p>
+<h4 id="using-meg">Using meg</h4>
+<p># meg -d 1000 -c 10 /</p>
+<p>Above command will make an output direcotry called "out" and inside it, it will make individual directory for each subdomain.
+Each subdomain directory will contain a file for both http and https request.</p>
+<p>You also get a index.html file which will show the path with response code, so you can easily grep for 200 status code and get accepted urls.</p>
+<p># grep -Hnri uber internal * | vim -</p>
+<p>you can save this result in a file ":w results" </p>
+<h3 id="running-commands-in-the-vim">Running commands in the vim</h3>
+<ul>
+<li>
+<p>:%!sort -u                     (% means current file, ! to run shell command)</p>
+</li>
+<li>
+<p>:%grep -v Content-Secu</p>
+</li>
+</ul>
+<h3 id="awk-text-processing-command">awk - text processing command</h3>
+<p>:%!awk -F';' ;{print $3}'                       /* -F = Field Separator, '{print $X}' = print X field */</p>
+<p>Ctrl+v/right click       to put vim in visual mode and then you can use arrow keys to do vertical/horizontal selection and then hit 'X' to delete them</p>
+<p>Shift+a  to go to the end of the line
+and delete a single item and then press dot(.) and vim will repeat the last thing(instruction)</p>
+<p>:/.$                        (\ -&gt; don't treat as an expression, $= End of the line)</p>
+<h3 id="search-and-replace">Search and replace</h3>
+<p>:%s/\&lt;search_item>/\&lt;replace></p>
+<p>:%s///                         (// -&gt; it search for whatever you last searched for)</p>
+<h3 id="xargs">xargs</h3>
+<p>xargs takes multiple lines of input and runs a command on every line of it.</p>
+<p>:%!xargs -n1 -I{} sh -c 'echo {} | base64 -d'                           (n1 -&gt; give 1 input at a time, -I{} is a placeholder of input, sh -c -&gt; to pass the command to shell )</p>
+<h3 id="html-tool-from-tomnomnom">html-tool from tomnomnom</h3>
+<p># find . -type f | html-tool attribs src                   (this will give all of the src attributes from all of the files)</p>
+<p># find . -type f | html-tool tags title | vim -          ( give the title tag from all of the files)</p>
+<p>:tabnew | read !grep -HNR 'self'                      (grep for whatever under the cursor and then open the result in a new buffer in a new tab so it shows up at a few places then ctrl+w+g+shift+f and this will take me straight to the line where that title exists.</p>
+<h3 id="gf">gf</h3>
+<p>gf urls | grep yahoo.com | vi -                   (finds every url)</p>
+<h3 id="unfurl-from-tomnomnom-its-a-great-tool-to-make-wordlist-using-keys-and-values-for-fuzzing">unfurl from tomnomnom                     (its a great tool to make wordlist using keys and values for fuzzing)</h3>
+<p>:%!unfurl -u paths                         (gives the uniques paths from all the urls)</p>
+<p>:%!unfurl -u keys                          (to get query strings)</p>
+<p>param miner extension - finds hidden parameters, above will be a good wordlist</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../idor/" class="btn btn-neutral" title="Stok IDOR Session"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../idor/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

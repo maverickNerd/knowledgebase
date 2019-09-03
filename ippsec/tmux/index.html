@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>ippsec tmux Session - Knowledge Base</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "ippsec tmux Session";
+    var mkdocs_page_input_path = "ippsec/tmux.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Knowledge Base</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../Virtual_Lab_Setup/">Setting up Kali Linux</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../nahamsec/recon_session_1/">NahamSec Recon Session 1 Notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../nahamsec/recon_session_2/">NahamSec Recon Session 2 Notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../bugbountynotes/firstlivementoring/">BugBountyNotes Mentoring Session</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../bugbountynotes/fastfoodhackingsession1/">BugBountyNotes FastFoodHacking Session 1</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../bugbountynotes/challengesession1/">BugBountyNotes Challenge Session 1</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../bugbountynotes/filterbypass/">BugBountyNotes Filter Bypass Session</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../tomnomnom/session1/">Tomnomnom Q&A Session</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">ippsec tmux Session</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#tmux-runs-as-a-process-and-not-tied-to-a-session-so-if-you-make-a-tmux-session-it-will-not-die-when-your-ssh-connection-get-closed-so-you-cna-reconnect-easily-to-earlier-session-without-losing-anything">tmux runs as a process and not tied to a session, so if you make a tmux session it will not die when your ssh connection get closed, so you cna reconnect easily to earlier session without losing anything</a></li>
+    
+
+    <li class="toctree-l2"><a href="#create-new-tmux-session">Create New tmux session</a></li>
+    
+
+    <li class="toctree-l2"><a href="#prefix-key">Prefix key</a></li>
+    
+
+    <li class="toctree-l2"><a href="#to-create-a-new-window">To create a new window</a></li>
+    
+
+    <li class="toctree-l2"><a href="#tmux-config">tmux config</a></li>
+    
+
+    <li class="toctree-l2"><a href="#to-attach-to-a-session">To Attach to a Session</a></li>
+    
+
+    <li class="toctree-l2"><a href="#to-detach-from-a-session">To Detach from a Session</a></li>
+    
+
+    <li class="toctree-l2"><a href="#rename-a-session">Rename a session</a></li>
+    
+
+    <li class="toctree-l2"><a href="#send-window-to-a-pane">Send window to a pane</a></li>
+    
+
+    <li class="toctree-l2"><a href="#move-to-copy-mode">Move to Copy Mode</a></li>
+    
+
+    <li class="toctree-l2"><a href="#to-save-logs">TO Save logs</a></li>
+    
+
+    <li class="toctree-l2"><a href="#veritcal-split">Veritcal split</a></li>
+    
+
+    <li class="toctree-l2"><a href="#horizontal-split">Horizontal Split</a></li>
+    
+
+    <li class="toctree-l2"><a href="#to-move-around-in-windows">To move around in windows</a></li>
+    
+
+    <li class="toctree-l2"><a href="#zoom-in-to-any-windows">Zoom in to any windows</a></li>
+    
+
+    <li class="toctree-l2"><a href="#to-resize-a-window">TO resize a window</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../idor/">Stok IDOR Session</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../vim_tutorial/">Tomnomnom Vim Tutorial</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Knowledge Base</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>ippsec tmux Session</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="tmux-runs-as-a-process-and-not-tied-to-a-session-so-if-you-make-a-tmux-session-it-will-not-die-when-your-ssh-connection-get-closed-so-you-cna-reconnect-easily-to-earlier-session-without-losing-anything">tmux runs as a process and not tied to a session, so if you make a tmux session it will not die when your ssh connection get closed, so you cna reconnect easily to earlier session without losing anything</h3>
+<h3 id="create-new-tmux-session">Create New tmux session</h3>
+<p># tmux new -s \&lt;name></p>
+<p>example: </p>
+<p># tmux new -s HTB</p>
+<h3 id="prefix-key">Prefix key</h3>
+<p>Ctrl + b === Prefix key</p>
+<h3 id="to-create-a-new-window">To create a new window</h3>
+<p>(prefixKey) c</p>
+<p>(prefixKey)0 or (prefixKey)1 to switch to different sessions</p>
+<h3 id="tmux-config">tmux config</h3>
+<p>#vi ~/.tmux.conf</p>
+<p>#Remap prefix to screens
+set -g prefix C-a
+bind C-a send-prefix
+unbind C-b</p>
+<p>#Quality of life stuff
+set -g history-limit 10000
+set -g aloow-rename off</p>
+<p>## Join Windows
+bind-key j commnad-prompt -p "join pane from:" "join-pane -s '%%'"
+bind-key s commnad-prompt -p "send pane to:" "join-pane -t '%%'"</p>
+<p># Search Mode VI (default is emac)
+set-window-option -g mode-keys vi</p>
+<p>run-shell /opt/tmux-logging/logging.tmux</p>
+<h3 id="to-attach-to-a-session">To Attach to a Session</h3>
+<p>#tmux ls</p>
+<p># tmux attach -t \&lt;session_name></p>
+<h3 id="to-detach-from-a-session">To Detach from a Session</h3>
+<p>(prefixKey)d</p>
+<h3 id="rename-a-session">Rename a session</h3>
+<p>(prefixKey),</p>
+<h3 id="send-window-to-a-pane">Send window to a pane</h3>
+<p>(prefixKey)s</p>
+<h3 id="move-to-copy-mode">Move to Copy Mode</h3>
+<p>(prefixKey)[</p>
+<p>now you can use page up and page down to move around</p>
+<p>Hit \&lt;space> to enter into copy mode, select text, hit \&lt;enter> to copy into the vim buffer</p>
+<p>Now open vim</p>
+<p>(prefixKey)]      --  and it paste</p>
+<h3 id="to-save-logs">TO Save logs</h3>
+<p>(prefixKey) + Alt+Shift+P</p>
+<h3 id="veritcal-split">Veritcal split</h3>
+<p>(prefixKey)%</p>
+<h3 id="horizontal-split">Horizontal Split</h3>
+<p>(prefixKey)"</p>
+<h3 id="to-move-around-in-windows">To move around in windows</h3>
+<p>(prefixKey)\&lt;arrow_key></p>
+<h3 id="zoom-in-to-any-windows">Zoom in to any windows</h3>
+<p>(prefixKey)z  --- Do this again to zoom out</p>
+<h3 id="to-resize-a-window">TO resize a window</h3>
+<p>(prefixKey) + \&lt;Arrows>             --- hold ctrl in this case </p>
+<p>(prefixKey){            -- to move the window to other layout</p>
+<p>(prefixKey)}           -- move the window to other layout</p>
+<p>(prefixKey)\&lt;space>     -- to change the layout</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../idor/" class="btn btn-neutral float-right" title="Stok IDOR Session">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../tomnomnom/session1/" class="btn btn-neutral" title="Tomnomnom Q&A Session"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../tomnomnom/session1/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../idor/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

@@ -110,6 +110,21 @@
     <a class="" href="../../tomnomnom/session1/">Tomnomnom Q&A Session</a>
 	    </li>
           
+            <li class="toctree-l1">
+		
+    <a class="" href="../../ippsec/tmux/">ippsec tmux Session</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../idor/">Stok IDOR Session</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../vim_tutorial/">Tomnomnom Vim Tutorial</a>
+	    </li>
+          
         </ul>
       </div>
       &nbsp;
@@ -162,7 +177,7 @@
 <h3 id="steal-teh-token">Steal teh token!</h3>
 <p>Use top.postmessage({uname:"test"},*)</p>
 <h3 id="this-strict-url-filter-should-prevent-xss-right">This strict URL filter should prevent XSS, right?</h3>
-<p>solution: data:text/html,<iframe name="<svg onload=alert(document.domain)>" src=https://www.bugbountytraining.com/challenges/challenge-6.php?url=javascript:name&gt;</p>
+<p>solution: data:text/html,\&lt;iframe name="\&lt;svg onload=alert(document.domain)>" src=https://www.bugbountytraining.com/challenges/challenge-6.php?url=javascript:name></p>
 <p>explanation: When using the javascript pseudo scheme, if the returned value is a string, browsers will write it onto the page like document.write. This is why some bookmarklets have a void(0) at the end to prevent the results accidentally return a string.</p>
 <p>Another thing to know is the window.name property persists even after navigation, and we can control this value.</p>
 <p>So, we can assign window.name with a XSS payload in HTML, then use javascript:name so that it writes the payload onto the page.</p>
