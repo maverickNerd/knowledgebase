@@ -10,5 +10,7 @@ nav:
     - BugBountyNotes Challenge Session 1: bugbountynotes/challengesession1.md
     - BugBountyNotes Filter Bypass Session: bugbountynotes/filterbypass.md
     - Tomnomnom Q&A Session: tomnomnom/session1.md
-
+    - ippsec tmux Session: ippsec/tmux.md
+    - Stok IDOR Session:  idor.md
+    - Tomnomnom Vim Tutorial: vim_tutorial.md
 theme: readthedocs
