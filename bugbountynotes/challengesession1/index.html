@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>BugBountyNotes Challenge Session 1 - Knowledge Base</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "BugBountyNotes Challenge Session 1";
+    var mkdocs_page_input_path = "bugbountynotes/challengesession1.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Knowledge Base</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../Virtual_Lab_Setup/">Setting up Kali Linux</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../nahamsec/recon_session_1/">NahamSec Recon Session 1 Notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../nahamsec/recon_session_2/">NahamSec Recon Session 2 Notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../firstlivementoring/">BugBountyNotes Mentoring Session</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../fastfoodhackingsession1/">BugBountyNotes FastFoodHacking Session 1</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">BugBountyNotes Challenge Session 1</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#give-some-space-to-this-xss-filter">Give some space to this XSS Filter</a></li>
+    
+
+    <li class="toctree-l2"><a href="#onerrorc2a0a">onerror=%C2%A0a()</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#steal-teh-token">Steal teh token!</a></li>
+        
+            <li><a class="toctree-l3" href="#this-strict-url-filter-should-prevent-xss-right">This strict URL filter should prevent XSS, right?</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../filterbypass/">BugBountyNotes Filter Bypass Session</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../tomnomnom/session1/">Tomnomnom Q&A Session</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Knowledge Base</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>BugBountyNotes Challenge Session 1</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="give-some-space-to-this-xss-filter">Give some space to this XSS Filter</h3>
+<ul>
+<li>
+<p>Check the page source, read the JS code, understand it how it is working, how it is filtering the payload.</p>
+</li>
+<li>
+<p>try different payloads with tag on URI with fragment(#)</p>
+</li>
+<li>
+<p>On fileformat.info check for "space" in search box. And choose break space which in UTF8 is %C2%A0</p>
+</li>
+</ul>
+<p>Now try - </p>
+<h1 id="onerrorc2a0a">onerror=%C2%A0a()</h1>
+<p>Since above work, as checked in page source.</p>
+<p>we can try:</p>
+<p>#onerror=%C2%A0alert(socument.domain)</p>
+<h3 id="steal-teh-token">Steal teh token!</h3>
+<p>Use top.postmessage({uname:"test"},*)</p>
+<h3 id="this-strict-url-filter-should-prevent-xss-right">This strict URL filter should prevent XSS, right?</h3>
+<p>solution: data:text/html,<iframe name="<svg onload=alert(document.domain)>" src=https://www.bugbountytraining.com/challenges/challenge-6.php?url=javascript:name&gt;</p>
+<p>explanation: When using the javascript pseudo scheme, if the returned value is a string, browsers will write it onto the page like document.write. This is why some bookmarklets have a void(0) at the end to prevent the results accidentally return a string.</p>
+<p>Another thing to know is the window.name property persists even after navigation, and we can control this value.</p>
+<p>So, we can assign window.name with a XSS payload in HTML, then use javascript:name so that it writes the payload onto the page.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../filterbypass/" class="btn btn-neutral float-right" title="BugBountyNotes Filter Bypass Session">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../fastfoodhackingsession1/" class="btn btn-neutral" title="BugBountyNotes FastFoodHacking Session 1"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../fastfoodhackingsession1/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../filterbypass/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

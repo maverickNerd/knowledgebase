@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Tomnomnom Q&A Session - Knowledge Base</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Tomnomnom Q&A Session";
+    var mkdocs_page_input_path = "tomnomnom/session1.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Knowledge Base</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../Virtual_Lab_Setup/">Setting up Kali Linux</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../nahamsec/recon_session_1/">NahamSec Recon Session 1 Notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../nahamsec/recon_session_2/">NahamSec Recon Session 2 Notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../bugbountynotes/firstlivementoring/">BugBountyNotes Mentoring Session</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../bugbountynotes/fastfoodhackingsession1/">BugBountyNotes FastFoodHacking Session 1</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../bugbountynotes/challengesession1/">BugBountyNotes Challenge Session 1</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../bugbountynotes/filterbypass/">BugBountyNotes Filter Bypass Session</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Tomnomnom Q&A Session</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#using-assetfinder">Using Assetfinder</a></li>
+    
+
+    <li class="toctree-l2"><a href="#httprobe">HttProbe</a></li>
+    
+
+    <li class="toctree-l2"><a href="#meg">meg</a></li>
+    
+
+    <li class="toctree-l2"><a href="#vimprev-script">vimprev script</a></li>
+    
+
+    <li class="toctree-l2"><a href="#binbash">!/bin/bash</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#vimrc">vimrc</a></li>
+        
+            <li><a class="toctree-l3" href="#using-above-vimprev-script">Using above vimprev script</a></li>
+        
+            <li><a class="toctree-l3" href="#using-tok">Using tok</a></li>
+        
+            <li><a class="toctree-l3" href="#deal-with-a-very-large-file">Deal with a very large file</a></li>
+        
+            <li><a class="toctree-l3" href="#to-check-for-subdomain-takeover">To check for subdomain takeover</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Knowledge Base</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Tomnomnom Q&A Session</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <ul>
+<li>vi tom_tools  </li>
+<li>put some tools inside the above file</li>
+<li>
+<p>cat tom_tools| xargs -n1 -I{} go get github.com/tomnomnom/{}</p>
+</li>
+<li>
+<p>echo$?         -- for checking the last command return value</p>
+</li>
+</ul>
+<h3 id="using-assetfinder">Using Assetfinder</h3>
+<p># assetfinder --subs-only sports.yahoo.com | tee -a domain</p>
+<h3 id="httprobe">HttProbe</h3>
+<p>#cat domain | httprobe -c 50 | tee -a hosts</p>
+<h3 id="meg">meg</h3>
+<p># meg -v /                       /<em>in same direcotory as hosts file</em>/</p>
+<p>cd out/</p>
+<p>grep -Hnri aws_</p>
+<p>grep -Hnri secret</p>
+<p>find . type f | html-tool tags title</p>
+<p>find . type f | html-tool attribs src</p>
+<h3 id="vimprev-script">vimprev script</h3>
+<h1 id="binbash">!/bin/bash</h1>
+<p>VIMENV=prev vim $@</p>
+<h3 id="vimrc">vimrc</h3>
+<p>#vi ~/.vimrc</p>
+<p>if $VIMENV == 'talk'
+  set background=light
+  let g:solarized_termcolors=256
+  colo solarized
+  noremap \&lt;Space> :n\&lt;CR>
+  noremap \&lt;Backspace> :N\&lt;CR>
+else
+   " Trans background
+   hi Normal ctermbg=none
+   hi NonText ctermg=none
+endif</p>
+<p>if $VIMENV == 'prev'
+  noremap \&lt;Space> :n\&lt;CR>
+  noremap \&lt;Backspace> :N\&lt;CR>
+  set noswapfile
+endif </p>
+<h3 id="using-above-vimprev-script">Using above vimprev script</h3>
+<p>vimprev $(find . -type f) </p>
+<p>Now I can use "space" to move to next file and backspace to move to prev one.</p>
+<ul>
+<li>We often see many pages return "200 OK" but really they are not.</li>
+</ul>
+<p># grep -Hnri '200 Ok' | grep -v ^index</p>
+<p># grep -lru '200 OK' | grep -v ^index | xargs -n1 ls -la</p>
+<p># grep -lru '200 OK' | grep -v ^index | xargs -n1 ls -la | sort -k5,5</p>
+<p>Now above output will sort according to length so you can check for interesting length which </p>
+<p># find . -type f -exec cat {} \; | sort --version-sort -u | wc</p>
+<p># find . -type f -exec cat {} \; | sort --version-sort -u | vim -</p>
+<h3 id="using-tok">Using tok</h3>
+<p>Break stream of inputs into words.</p>
+<p># find . -type f -exec cat {} \; | tok | vim -</p>
+<p>:%!sort -u --version-sort</p>
+<p>to sort them unique</p>
+<p>-&gt; then you can grep any interesting word in the host folder to check easily where it belongs and check further from here.</p>
+<h3 id="deal-with-a-very-large-file">Deal with a very large file</h3>
+<ul>
+<li>Sort the file first in vim
+%!sort -u --version-sort</li>
+</ul>
+<p>cat urls | urlinteresting | vim -</p>
+<h3 id="to-check-for-subdomain-takeover">To check for subdomain takeover</h3>
+<p># cat domains | while read domain; do host -t CNAME $domain; done | grep -i azure</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../../bugbountynotes/filterbypass/" class="btn btn-neutral" title="BugBountyNotes Filter Bypass Session"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../bugbountynotes/filterbypass/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>
