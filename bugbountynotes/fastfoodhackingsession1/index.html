@@ -112,6 +112,11 @@
           
             <li class="toctree-l1">
 		
+    <a class="" href="../fastfoodhackingsession2/">BugBountyNotes FastFoodHacking Session 2</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="../challengesession1/">BugBountyNotes Challenge Session 1</a>
 	    </li>
           
@@ -138,6 +143,11 @@
             <li class="toctree-l1">
 		
     <a class="" href="../../vim_tutorial/">Tomnomnom Vim Tutorial</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../BugBountyRecon/">Recon Process</a>
 	    </li>
           
         </ul>
@@ -185,12 +195,12 @@
 <li>if it works and you are logged in, try to access other pages like mentioned in robots.txt  </li>
 </ul>
 <p>Try html tags in signup form:<br />
-like : \&lt;h2>test  </p>
-<p>If they filter tags(&lt;&gt;), then try \&lt;h2</p>
+like : &lt;h2>test  </p>
+<p>If they filter tags(&lt;&gt;), then try &lt;h2, try only &lt; to check if this is filtered</p>
 <h4 id="check-pagesource-in-settings-page">Check pagesource in settings page</h4>
 <p>if they are hiding some button using comment, uncomment, and capture the request by sending the request.</p>
 <ul>
-<li>Try removing tokens, anc check if they are vaidating tokens on server side.</li>
+<li>Try removing tokens, and check if they are vaidating tokens on server side.</li>
 </ul>
 <h4 id="when-you-login-usually-after-successfull-login-website-redirected-you-to-some-page-like-home-page-check-if-you-can-change-this-redirect">When you login, usually after successfull login website redirected you to some page like home page, check if you can change this redirect.</h4>
 <ul>
@@ -199,6 +209,8 @@ like : \&lt;h2>test  </p>
 <p>Try to capture login request and add redirect_url parameter.</p>
 <h3 id="add-to-the-query-statement-of-loginphp-page-like-r95url1urlhttps">Add to the query statement of login.php page, like ?r_url=1&amp;url=https://</h3>
 <h3 id="check-in-github-for-the-website-for-any-keys">Check in github for the website for any keys</h3>
+<p>try query parameters like key, apiKey, apiSecret
+example: /?apiKey=123&amp;apiSecret=2323</p>
 <h4 id="just-try-things-if-something-you-see-in-page-source-thing-about-it-question-yourself-and-try-it">Just Try Things, if something you see in page source, thing about it, question yourself and try it.</h4>
               
             </div>
@@ -207,7 +219,7 @@ like : \&lt;h2>test  </p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../challengesession1/" class="btn btn-neutral float-right" title="BugBountyNotes Challenge Session 1">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../fastfoodhackingsession2/" class="btn btn-neutral float-right" title="BugBountyNotes FastFoodHacking Session 2">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../firstlivementoring/" class="btn btn-neutral" title="BugBountyNotes Mentoring Session"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -239,7 +251,7 @@ like : \&lt;h2>test  </p>
         <span><a href="../firstlivementoring/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../challengesession1/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../fastfoodhackingsession2/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

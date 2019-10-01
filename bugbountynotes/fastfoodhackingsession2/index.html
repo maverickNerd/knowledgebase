@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>BugBountyNotes Filter Bypass Session - Knowledge Base</title>
+  <title>BugBountyNotes FastFoodHacking Session 2 - Knowledge Base</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "BugBountyNotes Filter Bypass Session";
-    var mkdocs_page_input_path = "bugbountynotes/filterbypass.md";
+    var mkdocs_page_name = "BugBountyNotes FastFoodHacking Session 2";
+    var mkdocs_page_input_path = "bugbountynotes/fastfoodhackingsession2.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -78,9 +78,27 @@
     <a class="" href="../fastfoodhackingsession1/">BugBountyNotes FastFoodHacking Session 1</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="../fastfoodhackingsession2/">BugBountyNotes FastFoodHacking Session 2</a>
+    <a class="current" href="./">BugBountyNotes FastFoodHacking Session 2</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#bug-1">Bug 1</a></li>
+    
+
+    <li class="toctree-l2"><a href="#bug-2">Bug 2</a></li>
+    
+
+    <li class="toctree-l2"><a href="#bug-3">Bug 3</a></li>
+    
+
+    <li class="toctree-l2"><a href="#bug-4">Bug 4</a></li>
+    
+
+    <li class="toctree-l2"><a href="#bug-5">Bug 5</a></li>
+    
+
+    </ul>
 	    </li>
           
             <li class="toctree-l1">
@@ -88,15 +106,9 @@
     <a class="" href="../challengesession1/">BugBountyNotes Challenge Session 1</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="./">BugBountyNotes Filter Bypass Session</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#xss-filter">XSS Filter</a></li>
-    
-
-    </ul>
+    <a class="" href="../filterbypass/">BugBountyNotes Filter Bypass Session</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -146,7 +158,7 @@
     
       
     
-    <li>BugBountyNotes Filter Bypass Session</li>
+    <li>BugBountyNotes FastFoodHacking Session 2</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -156,35 +168,51 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="xss-filter">XSS Filter</h3>
+                <h3 id="bug-1">Bug 1</h3>
+<p>Try this:
+/FFH/?tid=lol&amp;cmid=lol
+Above can be controlled as can be seen in page source.</p>
+<p>/FFH/?tid=lol"-alert(1)-"cmid=lol'-alert(0)'</p>
+<p>cmid worked since devloper was using only htmlentities.
+So if you have used \&lt;h2>xss it would not have worked since php htmlentities html encode the h2 tag.</p>
+<p>At tid, \&lt;script> is filtered, \&lt;\script> is filtered, ' or " everything is filterd.</p>
+<p>Try \&lt;h2>xss in tid</p>
+<p>/FFH/?tid=lol\&lt;h2>xss&amp;cmid=lol</p>
+<p>It worked so payload shoudl be at tid as :</p>
+<p>/FFH/?tid=\&lt;/script/x>\&lt;svg/onload="alert(1)"></p>
+<h3 id="bug-2">Bug 2</h3>
+<p>Log in and go to settings page.</p>
+<p>On the www.bugbountytraining.com/FFH/settings.php page:</p>
+<p>Send the name as xxx"&gt;\&lt;h2>hi</p>
+<p>It gave invalid referrer error:</p>
+<p>Remove the referer and try the request again.</p>
+<p>Change the request method to GET</p>
 <ul>
-<li>
-<p>Are the basic " ' \&lt; > allowed? what if you try in different combinations ?</p>
-</li>
-<li>
-<p>Is "on[]=" filtered or jut the common 'onerror', 'oncommon' filtered? try other such as onload, onhover<br />
-   --&gt; put onxx=
-   --- if this passes, that mean they are whitelisting few terms
-   -&gt;&gt; remove = and try, sometimes dev people check for any statemement and they stop all statements.</p>
-</li>
-<li>
-<p>How do they handle unicode, double encoding, unusual encoding ?</p>
-</li>
+<li>Developer was simply checking for referer header.</li>
 </ul>
-<p><strong>Note:</strong> *When you find a XSS filter bypass, it's usually common throughout because developers copy the same code through out application.</p>
-<p>Example:</p>
-<ol>
-<li>
-<p>if -&gt; \&lt;img%20src="x" onerror="alert(0)"> encoded properly by developer try this:</p>
-<p>\&lt;img%20src='data:'onerror='alert(0)></p>
-</li>
-<li>
-<p>try sscriptrscriptiscriptpscripttscript if the developer is blocking script tag</p>
-</li>
-<li>
-<p>the use of \/\/ will bypass the filter check for "//", and the use of \n will bypass their check for .com, .co.uk etc.</p>
-</li>
-</ol>
+<h3 id="bug-3">Bug 3</h3>
+<p>On the login form, you can see the page source, there is a Javascript that says if r_url=1 it will take url and put it in redirectURL param.</p>
+<p>/login.php?act-login&amp;token=yes&amp;url=http://google.com&amp;r_url=1</p>
+<p>Below might bypass this filter as the devloper might be simply checking if url param is a url or not, if it is a url, block it.<br />
+Developer use FILTER_VALIDATE_URL to check if its url or not.</p>
+<p>/login.php?act-login&amp;token=yes&amp;url=//google.com&amp;r_url=1</p>
+<p>you can also double encode https://google.com to bypass the above filter.</p>
+<h3 id="bug-4">Bug 4</h3>
+<p>From robot.txt page, there is /book.php and /order.php pages available.</p>
+<p>Book something with test, test</p>
+<p>and capture the request, as you can see there is no CSRF protection token in this.</p>
+<p>We can generate the CSRF html payload and send the request using jsfiddle</p>
+<p>When we send the request from jsfiddle, we get error, check on burp what happened.</p>
+<p>As we can see the request, there is extra = coming in POST request, which is not valid JSON request.</p>
+<p>So we change our CSRF payload.</p>
+<p>= is coming because it is expcting value as we have put all payload in input name tag, we can put some stuff from the end of payload to value tag of payload.</p>
+<p>Developer is messed up here because they didn't validate Content-Type: which is text/plan in this case.</p>
+<p>They just checked the payload and they found it JSON so they passed it.</p>
+<h3 id="bug-5">Bug 5</h3>
+<p>Check the page source of book.php</p>
+<p>you cna see that there is a cancel button and there is href associated with it.</p>
+<p>/book.php?cancelUrl=javascript:alert(0)</p>
+<p>and we are able to change href using this and alert box open.</p>
               
             </div>
           </div>
@@ -192,10 +220,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../tomnomnom/session1/" class="btn btn-neutral float-right" title="Tomnomnom Q&A Session">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../challengesession1/" class="btn btn-neutral float-right" title="BugBountyNotes Challenge Session 1">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../challengesession1/" class="btn btn-neutral" title="BugBountyNotes Challenge Session 1"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../fastfoodhackingsession1/" class="btn btn-neutral" title="BugBountyNotes FastFoodHacking Session 1"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -221,10 +249,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../challengesession1/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../fastfoodhackingsession1/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../tomnomnom/session1/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../challengesession1/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
